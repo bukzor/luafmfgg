@@ -1,0 +1,66 @@
+
+source: ttps://youtu.be/pzIkOhf3gX0
+
+System T:
+  sort:
+    type:
+      variable: \tau
+      instances:
+        nat:
+          args: []
+        arrow: 
+          args:
+            - t1
+            - t2
+    expression:
+      variable: e
+      instances:
+        variables: [a-z]*
+        unary numerals:
+          succ:
+            args: 
+              - e
+            name: successor
+          zero:
+            args: []
+        rec:
+          args:
+            - \tau
+            - e0
+            - x
+            - y
+            - e1
+            - e
+          notation:
+            - rec[\tau](e0, x, y, e1)(e)
+          name: recursor
+        \lambda:
+          args:
+            - \tau
+            - x
+            - e
+          notation:
+            - \lambda[\tau](x.e)
+          name: abstraction
+        app:
+          args:
+            - e1
+            - e2
+          name: application
+  statements:
+    instances:
+      typehood:
+        notation: \tau type
+      element:
+        notation: e : \tau
+        variable: e_n : \tau_n
+    aka:
+      - typing judgements
+      - formation rules
+  hypothetical:
+    notation: e_n : \tau_n |- e: \tau"
+    args:
+      - "e_n : \\tau_n"
+      - "e : \\tau"
+
+
